@@ -1,0 +1,25 @@
+package Pekan4;
+
+public class Transaksi {
+	private String idTransaksi;
+	private String jenis;
+	private double nominal;
+	
+	//costruktor
+	public Transaksi(String id, String jenis, double nominal) {
+		this.idTransaksi = id;
+		this.jenis = jenis;
+		this.nominal = nominal;
+	}
+
+	// 2. hanya menyediakan getter (read only)
+	public String getIdTransaksi() {return idTransaksi;}
+	public String getJenis() {return jenis;}
+	public double getNominal() {return nominal;}
+	
+	
+	public void cetakDetail() {
+		System.out.println("ID: " + idTransaksi + " | jenis " + jenis + " | Nominal: Rp" + nominal);
+	}
+}
+
