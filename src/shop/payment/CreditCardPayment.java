@@ -1,5 +1,7 @@
 package shop.payment;
 
+import shop.StudentInfo;
+
 public class CreditCardPayment
         implements RefundablePayment, InstallmentPayment {
 
@@ -53,5 +55,15 @@ public class CreditCardPayment
 
     public long getUsedCredit() {
         return usedCredit;
+    }
+
+    @Override 
+    public long adminFee(long amount){
+        return amount * StudentInfo.CARD_ADMIN_PERCENT / 100;
+    }
+
+    @Override 
+    public String policy () {
+        return RefundablePayment.super.policy() + "; " +  InstallmentPayment.super.policy();
     }
 }
